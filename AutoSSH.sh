@@ -1,6 +1,7 @@
 #06.10.2020 Adam, Bartłomiej
 
 # W tym miejscu znajduje sie zapytanie uzytkownika o operacje ktore chce wykonac
+clear
 echo 'Witam w automatycznym kreatorze SSH!'
 echo 'Wybierz 1 aby zainstalowac, skonfigurowac i uruchomic SSH'
 echo 'Wybierz 2 aby wlaczyc SSH'
@@ -15,6 +16,7 @@ read What
 # Instrukacja warunkowa kiedy uzytkownik chce skonfigurowac, oraz uruchomic SSH
 if [ $What = 1 ]
 then
+        clear
 	apt-get install openssh-server # Instalacja SSH
 	systemctl enable sshd # Zalaczenie protokolu SSH
 	rm /etc/ssh/sshd_config # Usuniecie pliku z configiem SSH
@@ -113,6 +115,7 @@ then
 	systemctl start sshd # Uruchomienie SSH
 	echo "Tworzenie protokolu SSH zakonczone sukcesem!" # Komunikaty
 	echo "Aby polaczyc sie uzyj polecenia Nazwa_Uzytkownika@Adres_IP_Maszyny"
+	clear
 elif [ $What == 2 ] # Instrukacja warunkowa, kiedy uzytkownik chce uruchomic SSH
 then
 	systemctl start sshd  # Uruchamianie SSH
